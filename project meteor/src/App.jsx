@@ -84,7 +84,7 @@ function App() {
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">
           <Users className="w-12 h-12 mb-4 text-blue-400" />
           <h3 className="text-2xl font-semibold mb-2">Our Team</h3>
-          <p className="text-white/70">A passionate group of seniors 2026 making physics and space fun & educational.</p>
+          <p className="text-white/70">A passionate group of Seniors 2026 making physics and space fun & educational.</p>
         </div>
 
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">
@@ -128,6 +128,7 @@ function App() {
 
 
       </div>
+
       {/* Video placeholder */}
         <div className="w-full flex justify-center mt-8">
           <iframe

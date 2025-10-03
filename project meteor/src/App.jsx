@@ -61,10 +61,14 @@ function App() {
         </div>
       </nav>
 
+      <div className="">
+        <div className="absolute z-100 w-70 h-70 -bottom-10 -left-15 rounded-full bg-gray-100/60 blur-2xl"></div>
+        
+        <img src={Earth} alt="Earth image" 
+          className='absolute w-170 top-35 -left-50'
+          />
+      </div>
 
-      <img src={Earth} alt="Earth image" 
-        className='absolute w-170 top-35 -left-50'
-      />
       <img src={Meteor} alt="Meteor image"
         className='absolute w-80 right-10 rotate-75 top-110 '
       />

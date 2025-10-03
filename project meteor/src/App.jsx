@@ -43,7 +43,7 @@ function App() {
     <div className='flex flex-col gap-5'>
     
     {/* main landing page */}
-    <div className="bg-[#0e1d28] h-[97vh] w-[97vw] mx-auto mt-auto mb-auto rounded-3xl translate-y-3 overflow-hidden ">
+    <div className="bg-[#0e1d28] h-[97vh] w-[97vw] mx-auto mt-auto mb-3 rounded-3xl translate-y-3 overflow-hidden ">
 
       <nav className="relative flex items-center justify-between p-4 ml-5 text-white font-[Poppins]">
         {/* Logo on the left */}
@@ -55,7 +55,7 @@ function App() {
           </a>
 
         {/* Nav links centered */}
-        <div className="absolute hidden md:flex  text-md font-[550] left-1/2 transform -translate-x-1/2 gap-8">
+        <div className="absolute hidden md:flex text-md font-[550] left-1/2 transform -translate-x-1/2 gap-8">
           <a href="#" onClick={handleScrollToAbout} className="hover:text-lg transition-all ">About</a>
           <a href="#" onClick={handleScrollToAction} className="hover:text-lg transition-all ">In Action</a>
         </div>
@@ -103,7 +103,6 @@ function App() {
       </div>
     </div>
 
-    
     {/* In Action Section */}
     <div ref={inActionRef} className="bg-[#0e1d28] text-white w-[97vw] mx-auto mt-1 p-10 rounded-3xl font-[Poppins]">
       <h2 className="text-4xl font-bold text-center mb-12 font-mono underline ">In Action</h2>
@@ -127,7 +126,19 @@ function App() {
           <p className="text-white/70">Analyze the potential consequences of an impact, from local to global effects.</p>
         </div>
 
+
       </div>
+      {/* Video placeholder */}
+        <div className="w-full flex justify-center mt-8">
+          <iframe
+            className="w-full max-w-4xl aspect-video"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            title="YouTube video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
     </div>
 
 

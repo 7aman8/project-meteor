@@ -186,7 +186,7 @@ function App() {
           right-1/2 translate-x-1/2'
           />
       </div>
-
+      
       {/* <img src={Meteor} alt="Meteor image"
         className='absolute rotate-10 w-30 right-70 top-110 '
       /> */}

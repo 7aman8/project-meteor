@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback, useEffect } from 'react';
 
-import { loadFull } from "tsparticles";
+
 
 import Logo from "/logo.png"
 

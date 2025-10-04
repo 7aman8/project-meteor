@@ -1,4 +1,6 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useCallback } from 'react';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 import Logo from "/logo.png"
 
@@ -16,6 +18,10 @@ function App() {
   const inActionRef = useRef(null);
   const aboutRef = useRef(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const particlesInit = useCallback(async engine => {
+    await loadFull(engine);
+  }, []);
 
   const handleScrollToAction = (e) => {
     e.preventDefault();
@@ -38,7 +44,6 @@ function App() {
     
     {/* main landing page */}
     <div className="bg-[#0e1d28] h-[97vh] w-[97vw] mx-auto mt-auto mb-2 rounded-3xl translate-y-3 overflow-hidden ">
-
       <nav className="relative flex items-center justify-between p-4 ml-5 text-white font-[Poppins]">
         {/* Logo on the left */}
           <a href="/">
@@ -75,25 +80,41 @@ function App() {
         </div>
       </div>
 
+      <div>
+        <h1 
+          className='flex justify-center text-9xl text-white mx-auto items-center  ' 
+        >
+          fgdgfdga
+        </h1>
+      </div>
+
       <div className="">
         <div className="absolute z-100 
-        w-180 h-70 -bottom-30 
-        
+        xl:w-180 xl:h-70 xl:-bottom-30 
         right-1/2 translate-x-1/2 rounded-full bg-blue-300/30 blur-2xl"></div>
         
         <img src={Earth} alt="Earth image" 
-          className='absolute w-200 opacity-90
-          top-40 
+          className='absolute w-200 opacity-90 
+          -bottom-65
+          sm:-bottom-70
+          md:-bottom-150
+          lg:-bottom-170
+          
+          xl:top-60
+
+          2xl:top-90 
+          2xl:w-360 
           right-1/2 translate-x-1/2'
           />
       </div>
 
       <img src={Meteor} alt="Meteor image"
-        className='absolute w-80 right-10 rotate-75 top-110 '
+        className='absolute rotate-10 w-30 right-70 top-110 '
       />
 
       <img src={Mars} alt="Mars image"
-        className='absolute w-50 -right-15 rotate-75 top-70 opacity-80 '
+        className='absolute w-50 -right-11 rotate-75 top-70 opacity-80
+        '
       />
       <img src={Venus} alt="Venus image"
         className='absolute w-50 -left-15 rotate-75 top-70 opacity-80 '
@@ -193,3 +214,81 @@ const Footer = () => {
 };
 
 export default App
+
+
+      // <Particles
+      //   id="tsparticles"
+      //   init={particlesInit}
+      //   options={{
+      //     background: {
+      //       color: {
+      //         value: "#0e1d28",
+      //       },
+      //     },
+      //     fpsLimit: 60,
+      //     interactivity: {
+      //       events: {
+      //         onClick: {
+      //           enable: true,
+      //           mode: "push",
+      //         },
+      //         onHover: {
+      //           enable: true,
+      //           mode: "repulse",
+      //         },
+      //         resize: true,
+      //       },
+      //       modes: {
+      //         push: {
+      //           quantity: 4,
+      //         },
+      //         repulse: {
+      //           distance: 200,
+      //           duration: 0.4,
+      //         },
+      //       },
+      //     },
+      //     particles: {
+      //       color: {
+      //         value: "#ffffff",
+      //       },
+      //       links: {
+      //         color: "#ffffff",
+      //         distance: 150,
+      //         enable: false,
+      //         opacity: 0.5,
+      //         width: 1,
+      //       },
+      //       collisions: {
+      //         enable: true,
+      //       },
+      //       move: {
+      //         direction: "none",
+      //         enable: true,
+      //         outModes: {
+      //           default: "bounce",
+      //         },
+      //         random: false,
+      //         speed: 1,
+      //         straight: false,
+      //       },
+      //       number: {
+      //         density: {
+      //           enable: true,
+      //           area: 800,
+      //         },
+      //         value: 80,
+      //       },
+      //       opacity: {
+      //         value: 0.5,
+      //       },
+      //       shape: {
+      //         type: "circle",
+      //       },
+      //       size: {
+      //         value: { min: 1, max: 5 },
+      //       },
+      //     },
+      //     detectRetina: true,
+      //   }}
+      // />

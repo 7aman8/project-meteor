@@ -256,7 +256,7 @@ function App() {
 // Footer Component
 const Footer = () => {
   return (
-    <footer className="bg-transparent text-white w-[97vw] mx-auto p-6 rounded-t-3xl mt-1 font-mono flex items-center justify-between border-2 border-white/30  shadow-lg">
+    <footer className="bg-transparent text-white w-[97vw] mx-auto p-6 rounded-t-3xl mt-1 font-mono flex items-center justify-between border-2 border-white/30 border-b-0 shadow-lg">
 
       <a href="/">
         <div className="flex items-center">

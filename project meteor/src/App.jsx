@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 
 import { loadFull } from "tsparticles";
 
@@ -13,7 +13,47 @@ import Meteor2 from "/meteor2.png"
 
 // Icons
 import { Orbit, ShieldCheck, Globe2Icon, Rocket, Eye, Users, Menu, X, RocketIcon } from "lucide-react"
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+
+const TypeAnimation = ({ sequence, wrapper, speed, className, repeat }) => {
+  const [text, setText] = useState('');
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const typingSpeed = speed || 50;
+  const deletingSpeed = speed ? speed / 2 : 25;
+  const delay = 1000;
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopNum % sequence.length;
+      const fullText = sequence[i];
+
+      if (isDeleting) {
+        setText(fullText.substring(0, text.length - 1));
+      } else {
+        setText(fullText.substring(0, text.length + 1));
+      }
+
+      if (!isDeleting && text === fullText) {
+        setTimeout(() => setIsDeleting(true), delay);
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+      }
+    };
+
+    const ticker = setTimeout(() => {
+      handleTyping();
+    }, isDeleting ? deletingSpeed : typingSpeed);
+
+    return () => clearTimeout(ticker);
+  }, [text, isDeleting, loopNum, sequence, typingSpeed, deletingSpeed, delay]);
+
+  const Wrapper = wrapper || 'span';
+
+  return <Wrapper className={className}>{text}&nbsp;</Wrapper>;
+};
+
 
 function App() {
   const inActionRef = useRef(null);
@@ -44,7 +84,7 @@ function App() {
     <div className='flex flex-col gap-5'>
     
     {/* main landing page */}
-    <div className="bg-[#0e1d28] h-[97vh] w-[97vw] mx-auto mt-auto mb-2 rounded-3xl translate-y-3 overflow-hidden ">
+    <div className="bg-transparent h-[97vh] w-[97vw] mx-auto mt-auto mb-2 rounded-3xl translate-y-3 overflow-hidden border-2 border-white/30 shadow-lg relative">
       <nav className="relative flex items-center justify-between p-4 ml-5 text-white font-[Poppins]">
         {/* Logo on the left */}
           <a href="/">
@@ -82,11 +122,17 @@ function App() {
       </div>
 
       <div>
-        <h1 
-          className='flex justify-center text-7xl text-white mx-auto items-center font-[Poppins] font-[200] translate-y-15 ' 
-        >
-          PROJECT METEOR: EARTH'S SHIELD
-        </h1>
+        <TypeAnimation
+          sequence={[
+            "PROJECT METEOR: EARTH'S SHIELD",
+            "PROJECT METEOR: EARTH'S DEFENSE",
+            "PROJECT METEOR: EARTH'S GUARDIAN",
+          ]}
+          wrapper="h1"
+          speed={80}
+          className='flex justify-center text-7xl text-white mx-auto items-center font-[Poppins] font-[200] translate-y-15 '
+          repeat={Infinity}
+        />
       </div>
 
       <div className="flex justify-center items-center mt-10 translate-y-15"
@@ -135,7 +181,7 @@ function App() {
 
 
     {/* About Section */}
-    <div ref={aboutRef} className="bg-[#0e1d28] text-white w-[97vw] mx-auto mt-1 p-10 rounded-3xl font-[Poppins]">
+    <div ref={aboutRef} className="bg-transparent text-white w-[97vw] mx-auto mt-1 p-10 rounded-3xl font-[Poppins] border-2 border-white/30  shadow-lg">
       <h2 className="text-4xl font-bold text-center mb-12 font-mono underline">About Us</h2>
       <div className="grid md:grid-cols-3 gap-8 text-center">
 
@@ -162,7 +208,7 @@ function App() {
     </div>
 
     {/* In Action Section */}
-    <div ref={inActionRef} className="bg-[#0e1d28] text-white w-[97vw] mx-auto mt-1 p-10 rounded-3xl font-[Poppins]">
+    <div ref={inActionRef} className="bg-transparent text-white w-[97vw] mx-auto mt-1 p-10 rounded-3xl font-[Poppins] border-2 border-white/30  shadow-lg">
       <h2 className="text-4xl font-bold text-center mb-12 font-mono underline ">Features</h2>
       <div className="grid md:grid-cols-3 gap-8 text-center">
         
@@ -210,7 +256,7 @@ function App() {
 // Footer Component
 const Footer = () => {
   return (
-    <footer className="bg-[#0e1d28] text-white w-[97vw] mx-auto p-6 rounded-t-3xl mt-1 font-mono flex items-center justify-between">
+    <footer className="bg-transparent text-white w-[97vw] mx-auto p-6 rounded-t-3xl mt-1 font-mono flex items-center justify-between border-2 border-white/30  shadow-lg">
 
       <a href="/">
         <div className="flex items-center">
@@ -225,81 +271,3 @@ const Footer = () => {
 };
 
 export default App
-
-
-      // <Particles
-      //   id="tsparticles"
-      //   init={particlesInit}
-      //   options={{
-      //     background: {
-      //       color: {
-      //         value: "#0e1d28",
-      //       },
-      //     },
-      //     fpsLimit: 60,
-      //     interactivity: {
-      //       events: {
-      //         onClick: {
-      //           enable: true,
-      //           mode: "push",
-      //         },
-      //         onHover: {
-      //           enable: true,
-      //           mode: "repulse",
-      //         },
-      //         resize: true,
-      //       },
-      //       modes: {
-      //         push: {
-      //           quantity: 4,
-      //         },
-      //         repulse: {
-      //           distance: 200,
-      //           duration: 0.4,
-      //         },
-      //       },
-      //     },
-      //     particles: {
-      //       color: {
-      //         value: "#ffffff",
-      //       },
-      //       links: {
-      //         color: "#ffffff",
-      //         distance: 150,
-      //         enable: false,
-      //         opacity: 0.5,
-      //         width: 1,
-      //       },
-      //       collisions: {
-      //         enable: true,
-      //       },
-      //       move: {
-      //         direction: "none",
-      //         enable: true,
-      //         outModes: {
-      //           default: "bounce",
-      //         },
-      //         random: false,
-      //         speed: 1,
-      //         straight: false,
-      //       },
-      //       number: {
-      //         density: {
-      //           enable: true,
-      //           area: 800,
-      //         },
-      //         value: 80,
-      //       },
-      //       opacity: {
-      //         value: 0.5,
-      //       },
-      //       shape: {
-      //         type: "circle",
-      //       },
-      //       size: {
-      //         value: { min: 1, max: 5 },
-      //       },
-      //     },
-      //     detectRetina: true,
-      //   }}
-      // />

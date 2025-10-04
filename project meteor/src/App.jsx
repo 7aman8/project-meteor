@@ -132,10 +132,15 @@ function App() {
       <div>
         <TypeAnimation
           sequence={[
-            "PROJECT METEOR: EARTH'S SHIELD",
-            "PROJECT METEOR: EARTH'S DEFENSE",
-            "PROJECT METEOR: EARTH'S GUARDIAN",
+            "EARTH'S SHIELD",
+            "EARTH'S DEFENSE",
+            "EARTH'S GUARDIAN",
           ]}
+          // sequence={[
+          //   "PROJECT METEOR: EARTH'S SHIELD",
+          //   "PROJECT METEOR: EARTH'S DEFENSE",
+          //   "PROJECT METEOR: EARTH'S GUARDIAN",
+          // ]}
           wrapper="h1"
           speed={80}
           className='flex justify-center text-7xl text-white mx-auto items-center font-[Poppins] font-[200] translate-y-15 '
@@ -143,14 +148,23 @@ function App() {
         />
       </div>
 
-      <div className="flex justify-center items-center mt-10 translate-y-15"
+      <div className="flex z-[1000] justify-center items-center mt-25" // translate-y-15s
+      onClick={() => window.location.href = '/simulation'}
+      >
+        <button className="flex z-10 items-center justify-center gap-3 transition-colors border-3 border-white hover:bg-white/20 text-white text-3xl font-[Poppins] px-8 py-4 rounded-full w-100 shadow-lg"
+        >
+          Launch Simulation
+          <RocketIcon className="w-8 h-8" />
+        </button>
+      </div>
+      {/* <div className="flex justify-center items-center mt-10 translate-y-15"
       onClick={() => window.location.href = '/simulation'}
       >
         <button className="flex z-10 items-center justify-center gap-3 bg-red-400 hover:bg-red-500 transition-colors text-white text-3xl font-[Poppins] px-8 py-4 rounded-full w-100 shadow-lg">
           Launch Simulation
           <RocketIcon className="w-8 h-8" />
         </button>
-      </div>
+      </div> */}
 
       <div className="">
         <div className="absolute z-100 
@@ -181,9 +195,17 @@ function App() {
         className='absolute w-32 sm:w-40 md:w-48 lg:w-52 xl:w-40 2xl:w-60 -right-5 sm:-right-6 md:-right-7 lg:-right-8 xl:-right-9 2xl:-right-10 rotate-75 top-60 sm:top-64 md:top-72 lg:top-80 xl:top-96 2xl:top-112 opacity-80
         '
       />
+        <div className="absolute z-100 
+        xl:w-55 xl:h-55 xl:bottom-55 -left-20
+        rounded-full bg-yellow-300/30 blur-2xl"></div>
+
+
       <img src={Venus} alt="Venus image"
         className='absolute w-32 sm:w-40 md:w-48 lg:w-52 xl:w-40 2xl:w-60 -left-5 sm:-left-6 md:-left-7 lg:-left-8 xl:-left-9 2xl:-left-10 rotate-75 top-60 sm:top-64 md:top-72 lg:top-80 xl:top-96 2xl:top-112 opacity-80 '
       />
+      <div className="absolute z-100 
+      xl:w-55 xl:h-55 xl:bottom-55 -right-20
+      rounded-full bg-orange-300/30 blur-2xl"></div>
 
     </div>
 

@@ -22,6 +22,7 @@ const TypeAnimation = ({ sequence, wrapper, speed, className, repeat }) => {
   const typingSpeed = speed || 50;
   const deletingSpeed = speed ? speed / 2 : 25;
   const delay = 1000;
+  
 
   useEffect(() => {
     const handleTyping = () => {

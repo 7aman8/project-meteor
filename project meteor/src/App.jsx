@@ -1,10 +1,10 @@
 import { useRef, useState, useCallback } from 'react';
-import Particles from "react-tsparticles";
+
 import { loadFull } from "tsparticles";
 
 import Logo from "/logo.png"
 
-import Earth from "/earth.png"
+import Earth from "/earthm.png"
 import Mars from "/Mars.png"
 import Venus from "/Venus.png"
 
@@ -12,7 +12,8 @@ import Meteor from "/meteor.png"
 import Meteor2 from "/meteor2.png"
 
 // Icons
-import { Orbit, ShieldCheck, Globe2Icon, Rocket, Eye, Users, Menu, X } from "lucide-react"
+import { Orbit, ShieldCheck, Globe2Icon, Rocket, Eye, Users, Menu, X, RocketIcon } from "lucide-react"
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 function App() {
   const inActionRef = useRef(null);
@@ -54,7 +55,7 @@ function App() {
           </a>
 
         {/* Nav links centered */}
-        <div className="absolute hidden md:flex text-md font-[550] left-1/2 transform -translate-x-1/2 gap-8">
+        <div className="absolute hidden md:flex text-md font-[550] left-1/2 transform -translate-x-1/2 gap-8 xl:gap-12 2xl:gap-16 2xl:text-lg">
           <a href="#" onClick={handleScrollToAbout} className="hover:text-lg transition-all ">About</a>
           <a href="#" onClick={handleScrollToAction} className="hover:text-lg transition-all ">Features</a>
         </div>
@@ -82,10 +83,19 @@ function App() {
 
       <div>
         <h1 
-          className='flex justify-center text-9xl text-white mx-auto items-center  ' 
+          className='flex justify-center text-7xl text-white mx-auto items-center font-[Poppins] font-[200] translate-y-15 ' 
         >
-          fgdgfdga
+          PROJECT METEOR: EARTH'S SHIELD
         </h1>
+      </div>
+
+      <div className="flex justify-center items-center mt-10 translate-y-15"
+      onClick={() => window.location.href = '/simulation'}
+      >
+        <button className="flex z-10 items-center justify-center gap-3 bg-red-400 hover:bg-red-500 transition-colors text-white text-3xl font-[Poppins] px-8 py-4 rounded-full w-100 shadow-lg">
+          Launch Simulation
+          <RocketIcon className="w-8 h-8" />
+        </button>
       </div>
 
       <div className="">
@@ -94,30 +104,31 @@ function App() {
         right-1/2 translate-x-1/2 rounded-full bg-blue-300/30 blur-2xl"></div>
         
         <img src={Earth} alt="Earth image" 
-          className='absolute w-200 opacity-90 
+          className='absolute w-170 opacity-90 
           -bottom-65
           sm:-bottom-70
           md:-bottom-150
           lg:-bottom-170
           
-          xl:top-60
+          xl:top-70
 
           2xl:top-90 
           2xl:w-360 
+          3xl:w-400
           right-1/2 translate-x-1/2'
           />
       </div>
 
-      <img src={Meteor} alt="Meteor image"
+      {/* <img src={Meteor} alt="Meteor image"
         className='absolute rotate-10 w-30 right-70 top-110 '
-      />
+      /> */}
 
       <img src={Mars} alt="Mars image"
-        className='absolute w-50 -right-11 rotate-75 top-70 opacity-80
+        className='absolute w-32 sm:w-40 md:w-48 lg:w-52 xl:w-40 2xl:w-60 -right-5 sm:-right-6 md:-right-7 lg:-right-8 xl:-right-9 2xl:-right-10 rotate-75 top-60 sm:top-64 md:top-72 lg:top-80 xl:top-96 2xl:top-112 opacity-80
         '
       />
       <img src={Venus} alt="Venus image"
-        className='absolute w-50 -left-15 rotate-75 top-70 opacity-80 '
+        className='absolute w-32 sm:w-40 md:w-48 lg:w-52 xl:w-40 2xl:w-60 -left-5 sm:-left-6 md:-left-7 lg:-left-8 xl:-left-9 2xl:-left-10 rotate-75 top-60 sm:top-64 md:top-72 lg:top-80 xl:top-96 2xl:top-112 opacity-80 '
       />
 
     </div>

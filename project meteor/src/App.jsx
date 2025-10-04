@@ -101,11 +101,18 @@ function App() {
           <a href="#" onClick={handleScrollToAction} className="hover:text-lg transition-all ">Features</a>
         </div>
 
-        {/* Menu Icon for mobile */}
-        <div className="md:hidden">
-          <button onClick={toggleSidebar}>
-            {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+        {/* Right-aligned items */}
+        <div className="flex items-center gap-4">
+          <a href="https://github.com/7aman8/project-meteor" target="_blank" rel="noopener noreferrer" className="hidden md:block bg-transparent border border-white/50 text-white font-[400] mr-10 py-2 px-4 rounded-full hover:bg-white/20 transition-colors">
+            Visit Repo
+          </a>
+
+          {/* Menu Icon for mobile */}
+          <div className="md:hidden">
+            <button onClick={toggleSidebar}>
+              {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </nav>
 

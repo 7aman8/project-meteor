@@ -1,16 +1,65 @@
-# React + Vite
+# _Project Meteor ☄️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Meteor Logo](./public/logo.png)
 
-Currently, two official plugins are available:
+> An interactive simulation where you can defend Earth from incoming threats using realistic physics and orbital mechanics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_Project Meteor_ is a web-based educational tool designed to make space science and physics engaging and accessible. Users can launch simulations to understand the complexities of orbital mechanics and test various strategies to protect our planet from celestial impacts. 
 
-## React Compiler
+This project was developed by a passionate group of Seniors 2026 to inspire curiosity and teamwork.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Realistic Physics:** Experience a simulation governed by real-world physics and orbital mechanics.
+- **Defensive Scenarios:** Test various strategies to deflect or destroy incoming threats to protect Earth.
+- **Impact Analysis:** Analyze the potential consequences of a meteor impact, from local to global effects.
+- **Modern UI:** A sleek, responsive, and intuitive interface built with the latest web technologies.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
+- **[Vite](https://vitejs.dev/)**: Next-generation frontend tooling for a fast development experience.
+- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapid UI development.
+- **[Lucide React](https://lucide.dev/)**: Beautiful and consistent icons.
+
+## ⚙️ Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- Node.js (v18 or later is recommended)
+- npm (comes with Node.js)
+
+### Installation
+
+1.  Clone the repository to your local machine:
+    ```sh
+    git clone https://github.com/your_username/project-meteor.git
+    ```
+2.  Navigate into the project directory:
+    ```sh
+    cd project-meteor
+    ```
+3.  Install the required NPM packages:
+    ```sh
+    npm install
+    ```
+4.  Start the development server:
+    ```sh
+    npm run dev
+    ```
+
+The application should now be running on `http://localhost:5173` (or the next available port).
+
+## 🤝 Contributing
+
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request

@@ -1,6 +1,6 @@
 # _Project Meteor ☄️
 
-![Project Meteor Logo](../project%20meteor/public/logo.png)
+![Project Meteor Logo](/logo.png)
 
 > An interactive simulation where you can defend Earth from incoming threats using realistic physics and orbital mechanics.
 

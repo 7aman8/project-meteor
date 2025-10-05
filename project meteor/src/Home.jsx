@@ -98,7 +98,7 @@ function App() {
             <img
             src={Logo}
             alt="Logo"
-            className="absolute inset-0 w-20 h-20 object-cover transition-opacity duration-500 opacity-100 hover:opacity-0"
+            className="absolute inset-0 w-10 h-10 md:w-20 md:h-20 object-cover transition-opacity duration-500 opacity-100 hover:opacity-0"
             />
             {/* Hover logo */}
             <img
@@ -106,7 +106,7 @@ function App() {
             alt="Logo Hover"
             className="absolute inset-0 w-20 h-20 object-cover transition-opacity duration-500 opacity-0 hover:opacity-100"
             />
-            <span className="text-lg font-bold font-mono ml-25">_Project Meteor</span>
+            <span className="text-lg font-bold font-mono ml-15 -translate-y-5 md:ml-25 md:-translate-y-0 ">_Project Meteor</span>
         </div>
         </a>
 
@@ -123,7 +123,7 @@ function App() {
           </a>
 
           {/* Menu Icon for mobile */}
-          <div className="md:hidden">
+          <div className="md:hidden -translate-y-4 -translate-x-8 p-2 rounded-lg">
             <button onClick={toggleSidebar}>
               {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -132,7 +132,7 @@ function App() {
       </nav>
 
       {/* Sidebar */}
-      <div className={`fixed top-0 right-0 h-full bg-[#0e1d28] w-64 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
+      <div className={`fixed top-0 right-0 h-full bg-gray-800/30 backdrop-blur-lg w-64 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50 `}>
         <div className="flex justify-end p-4">
           <button onClick={toggleSidebar}>
             <X size={24} className="text-white" />
@@ -158,7 +158,7 @@ function App() {
           // ]}
           wrapper="h1"
           speed={80}
-          className='flex justify-center text-7xl text-white mx-auto items-center font-[Poppins] font-[200] translate-y-15 '
+          className='flex justify-center text-3xl sm:text-5xl md:text-7xl text-white mx-auto items-center font-[Poppins] font-[200] translate-y-15 '
           repeat={Infinity}
         />
       </div>
@@ -166,10 +166,10 @@ function App() {
       <div className="flex z-[1000] justify-center items-center mt-25" // translate-y-15s
       onClick={() => window.location.href = '/simulation'}
       >
-        <button className="flex z-10 items-center justify-center gap-3 transition-colors border-3 border-white hover:bg-white/20 text-white text-3xl font-[Poppins] px-8 py-4 rounded-full w-100 shadow-lg"
+        <button className="flex z-10 items-center justify-center gap-3 transition-colors border-3 border-white hover:bg-white/20 text-white text-xl md:text-3xl font-[Poppins] px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg"
         >
           Launch Simulation
-          <RocketIcon className="w-8 h-8" />
+          <RocketIcon className="w-6 h-6 md:w-8 md:h-8" />
         </button>
       </div>
       {/* <div className="flex justify-center items-center mt-10 translate-y-15"
@@ -181,6 +181,17 @@ function App() {
         </button>
       </div> */}
 
+      
+          {/* sm:-bottom-70
+          md:-bottom-150
+          lg:-bottom-170
+          
+          xl:top-70
+
+          2xl:top-90 
+          2xl:w-360 
+          3xl:w-400 */}
+
       <div className="">
         <div className="absolute z-100 
         xl:w-180 xl:h-70 xl:-bottom-30 
@@ -189,15 +200,10 @@ function App() {
         <img src={Earth} alt="Earth image" 
           className='absolute w-170 opacity-90 
           -bottom-65
-          sm:-bottom-70
-          md:-bottom-150
-          lg:-bottom-170
-          
-          xl:top-70
+          md:-bottom-120
+          lg:-bottom-100
+          xl:-bottom-120
 
-          2xl:top-90 
-          2xl:w-360 
-          3xl:w-400
           right-1/2 translate-x-1/2'
           />
       </div>

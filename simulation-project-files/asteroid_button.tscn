@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://4x0qj02plsdw"]
+
+[ext_resource type="Texture2D" uid="uid://pljs8ivxrfn2" path="res://meteor.png" id="1_7wb1q"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(144, 144)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/icon_max_width = 128
+theme_override_font_sizes/font_size = 13
+icon = ExtResource("1_7wb1q")
+autowrap_mode = 3
+icon_alignment = 1

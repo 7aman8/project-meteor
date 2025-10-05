@@ -1,0 +1,309 @@
+[gd_scene load_steps=19 format=3 uid="uid://b4vbnfg76svew"]
+
+[ext_resource type="Script" uid="uid://dd2je7xlmahlo" path="res://main.gd" id="1_7mycd"]
+[ext_resource type="Script" uid="uid://b6ey2d85b5pif" path="res://addons/orbit-controls/orbit-controls.gd" id="2_7mycd"]
+[ext_resource type="Shader" uid="uid://bor2eciy1robs" path="res://earth.gdshader" id="3_5vw27"]
+[ext_resource type="PackedScene" uid="uid://b0nt4n13a6448" path="res://addons/starlight/Stars.tscn" id="3_272bh"]
+[ext_resource type="Script" uid="uid://den37wiypt0nw" path="res://addons/starlight/StarGenerator.gd" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dk077n6cjhn1s" path="res://textures/8k_earth_daymap.jpg" id="4_kek77"]
+[ext_resource type="Script" uid="uid://btw1vs43gnp1q" path="res://impact_location_picker.gd" id="5_kek77"]
+
+[sub_resource type="SystemFont" id="SystemFont_272bh"]
+font_names = PackedStringArray("Quicksand")
+
+[sub_resource type="Theme" id="Theme_5vw27"]
+default_font = SubResource("SystemFont_272bh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.1428, 0.169547, 0.17, 0.392157)
+
+[sub_resource type="LabelSettings" id="LabelSettings_272bh"]
+font_size = 32
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_d5lh8"]
+rayleigh_color = Color(0, 0, 0.235294, 1)
+mie_coefficient = 0.143
+mie_eccentricity = 0.89
+mie_color = Color(0.961302, 0.722576, 0.364571, 1)
+sun_disk_scale = 360.0
+ground_color = Color(0.00644204, 0.0534706, 0.16082, 1)
+
+[sub_resource type="Sky" id="Sky_81phd"]
+sky_material = SubResource("PhysicalSkyMaterial_d5lh8")
+
+[sub_resource type="Environment" id="Environment_qtpbo"]
+background_mode = 2
+sky = SubResource("Sky_81phd")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_texture = ExtResource("4_kek77")
+
+[sub_resource type="SphereMesh" id="SphereMesh_qtpbo"]
+material = SubResource("StandardMaterial3D_7mycd")
+radius = 10.0
+height = 20.0
+radial_segments = 128
+rings = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kek77"]
+render_priority = 0
+shader = ExtResource("3_5vw27")
+shader_parameter/texture_earth = ExtResource("4_kek77")
+shader_parameter/impact_count = 0
+shader_parameter/impact_centers = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/crater_radii_km = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/fireball_radii_km = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/blast_radii_km = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/crater_color = Color(1, 0, 0, 1)
+shader_parameter/fireball_color = Color(1, 0.5, 0, 1)
+shader_parameter/blast_color = Color(0, 0.7, 1, 1)
+shader_parameter/border_width_km = 50.0
+shader_parameter/fill_alpha = 0.3
+shader_parameter/border_alpha = 0.5
+shader_parameter/emission_strength = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ulv8f"]
+radius = 10.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_7mycd")
+
+[node name="NeoApiRequest" type="HTTPRequest" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_5vw27")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.381944
+anchor_bottom = 1.0
+offset_right = -120.0
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AsteroidSelectorLabel" type="Label" parent="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Meteor Selector"
+horizontal_alignment = 1
+
+[node name="ButtonsContainer" type="GridContainer" parent="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LoadMoreButton" type="Button" parent="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+text = "Load More"
+
+[node name="LaunchButton" type="Button" parent="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+disabled = true
+text = "Launch"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control/HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Angle"
+
+[node name="AngleLabel" type="Label" parent="HUD/Control/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "(45°)"
+
+[node name="AngleSlider" type="HSlider" parent="HUD/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+max_value = 90.0
+value = 45.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.777778
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ImpactDetailsContainer" type="HBoxContainer" parent="HUD/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_force_pass_scroll_events = false
+alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Control/VBoxContainer/ImpactDetailsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_272bh")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control/VBoxContainer/ImpactDetailsContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control/VBoxContainer/ImpactDetailsContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Control/VBoxContainer/ImpactDetailsContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Latest Impact:"
+label_settings = SubResource("LabelSettings_272bh")
+
+[node name="ImpactDetails" type="Label" parent="HUD/Control/VBoxContainer/ImpactDetailsContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Crater Radius"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(1, 0.5, 0, 1)
+
+[node name="Label" type="Label" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Fireball Radius"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0.7, 1, 1)
+
+[node name="Label" type="Label" parent="HUD/Control/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Shockwave Radius"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qtpbo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, -0.353553, 0.883883, 0.306186, -0.353553, 0.176777, -0.918559, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Earth" type="StaticBody3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Earth"]
+mesh = SubResource("SphereMesh_qtpbo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_kek77")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Earth"]
+shape = SubResource("SphereShape3D_ulv8f")
+
+[node name="Markers" type="Node" parent="Earth"]
+
+[node name="OrbitControls" type="Node3D" parent="."]
+script = ExtResource("2_7mycd")
+_camera = NodePath("../Camera3D")
+min_distance = 10.05
+enable_pan = false
+metadata/_custom_type_script = "uid://b6ey2d85b5pif"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 10, 30)
+
+[node name="Stars" parent="." instance=ExtResource("3_272bh")]
+script = ExtResource("4_5vw27")
+size = 10000.0
+star_count = 100000
+rng_seed = 1234
+generate_at_origin = false
+
+[node name="ImpactLocationPicker" type="Node3D" parent="." node_paths=PackedStringArray("camera", "earth")]
+script = ExtResource("5_kek77")
+camera = NodePath("../Camera3D")
+earth = NodePath("../Earth")
+
+[connection signal="request_completed" from="NeoApiRequest" to="." method="_on_neo_api_request_request_completed"]
+[connection signal="pressed" from="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/LoadMoreButton" to="." method="_on_load_more_button_pressed"]
+[connection signal="pressed" from="HUD/Control/HBoxContainer/MarginContainer/VBoxContainer/LaunchButton" to="." method="_on_launch_button_pressed"]
+[connection signal="value_changed" from="HUD/Control/HBoxContainer/VBoxContainer/AngleSlider" to="." method="_on_angle_slider_value_changed"]

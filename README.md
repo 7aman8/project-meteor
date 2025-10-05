@@ -2,19 +2,19 @@
 
 ![Project Meteor Logo](/logo.png)
 
->An interactive simulation where you can defend Earth from incoming threats using realistic physics and orbital mechanics.
+> We developed an interactive asteroid simulator that utilizes NASA's Near-Earth Objects (NEO) dataset to calculate and visualize the effects and impact of asteroids that may have or might strike the Earth.
 
-_Project Meteor_ is a web-based educational tool designed to make space science and physics engaging and accessible. Users can launch simulations to understand the complexities of orbital mechanics and test various strategies to protect our planet from celestial impacts.
- 
+_Project Meteor_ is an interactive asteroid simulator that utilizes NASA's Near-Earth Objects (NEO) dataset to calculate and visualize the effects and impact of asteroids that may have or might strike the Earth. Users select an asteroid from NASA's database and simulate the strike of it on Earth, while modifying values like angle. An impact is visualized in three radii: the crater radius, the fireball radius (thermal radius), and the blast radius (shockwave radius). The simulator features a 3D model of Earth that can be panned and rotated around. The simulator uses mathematical and physical calculations to visualize the range of impact done by various asteroids. It serves both an educational purpose by helping people understand the threat of asteroids and practical applications for researchers and educators who are studying planetary defense scenarios.
 
-This project was developed by a passionate group of Seniors 2026 to inspire curiosity and teamwork.
+Visit [meteor.arjbuilds.dev](https://meteor.arjbuilds.dev) to see the website in action!
 
 ## ✨ Features
 
-- **Realistic Physics:** Experience a simulation governed by real-world physics and orbital mechanics.
-- **Defensive Scenarios:** Test various strategies to deflect or destroy incoming threats to protect Earth.
-- **Impact Analysis:** Analyze the potential consequences of a meteor impact, from local to global effects.
-- **Modern UI:** A sleek, responsive, and intuitive interface built with the latest web technologies.
+- **Interactive 3D Earth Model:** Rotate and pan around a detailed 3D model of the Earth.
+- **NASA NEO Dataset:** Select real asteroids from NASA's database for simulation.
+- **Customizable Simulations:** Modify values like impact angle to see different outcomes.
+- **Impact Visualization:** See the impact visualized in three radii: crater, fireball (thermal), and blast (shockwave).
+- **Educational Tool:** Understand the threat of asteroids and explore planetary defense scenarios.
 
 
 [Watch Project Showcase](./showcase.mp4)
@@ -23,6 +23,7 @@ This project was developed by a passionate group of Seniors 2026 to inspire curi
 
 - **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
 - **[Vite](https://vitejs.dev/)**: Next-generation frontend tooling for a fast development experience.
+- **[Godot](https://godotengine.org/)**: A multi-platform, open-source game engine used for the simulation.
 - **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapid UI development.
 - **[Lucide React](https://lucide.dev/)**: Beautiful and consistent icons.
 
@@ -39,7 +40,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repository to your local machine:
     ```sh
-    git clone https://github.com/your_username/project-meteor.git
+    git clone https://github.com/7aman8/project-meteor.git
     ```
 2.  Navigate into the project directory:
     ```sh

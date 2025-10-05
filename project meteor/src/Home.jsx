@@ -137,8 +137,8 @@ function App() {
           </button>
         </div>
         <div className="flex flex-col items-center gap-8 mt-10 text-white">
-          <a href="#" onClick={handleScrollToAbout} className="hover:text-lg transition-all ">About</a>
-          <a href="#" onClick={handleScrollToAction} className="hover:text-lg transition-all ">In Action</a>
+          <a href="#" onClick={handleScrollToAbout} className="hover:text-lg transition-all hover:underline ">About</a>
+          <a href="#" onClick={handleScrollToAction} className="hover:text-lg transition-all hover:underline ">In Action</a>
         </div>
       </div>
 
@@ -203,7 +203,8 @@ function App() {
       {/* <img src={Meteor} alt="Meteor image"
         className='absolute rotate-10 w-30 right-70 top-110 '
       /> */}
-
+    
+    <div className="">
       <img src={Mars} alt="Mars image"
         className='absolute w-32 sm:w-40 md:w-48 lg:w-52 xl:w-40 2xl:w-60 -right-5 sm:-right-6 md:-right-7 lg:-right-8 xl:-right-9 2xl:-right-10 rotate-75 top-60 sm:top-64 md:top-72 lg:top-80 xl:top-96 2xl:top-112 opacity-80
         '
@@ -211,14 +212,16 @@ function App() {
         <div className="absolute z-100 
         xl:w-55 xl:h-55 xl:bottom-50 -left-20
         rounded-full bg-yellow-300/30 blur-2xl"></div>
+    </div>
 
-
+    <div>
       <img src={Venus} alt="Venus image"
         className='absolute w-32 sm:w-40 md:w-48 lg:w-52 xl:w-40 2xl:w-60 -left-5 sm:-left-6 md:-left-7 lg:-left-8 xl:-left-9 2xl:-left-10 rotate-75 top-60 sm:top-64 md:top-72 lg:top-80 xl:top-96 2xl:top-112 opacity-80 '
       />
       <div className="absolute z-100 
       xl:w-55 xl:h-55 xl:bottom-50 -right-20
       rounded-full bg-orange-300/30 blur-2xl"></div>
+    </div>
 
     </div>
 

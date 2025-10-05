@@ -230,20 +230,20 @@ function App() {
 
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">
           <Users className="w-12 h-12 mb-4 text-blue-400" />
-          <h3 className="text-2xl font-semibold mb-2">Our Team</h3>
-          <p className="text-white/70">A passionate group of Seniors 2026 making physics and space fun & educational.</p>
+          <h3 className="text-2xl font-semibold mb-2">Our Values</h3>
+          <p className="text-white/70">Promote awareness of asteroid impacts using accessible simulation tools.</p>
         </div>
 
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">
           <Rocket className="w-12 h-12 mb-4 text-red-400" />
           <h3 className="text-2xl font-semibold mb-2">Our Mission</h3>
-          <p className="text-white/70">Inspire curiosity and teamwork through engaging, educational simulations.</p>
+          <p className="text-white/70">Increase awareness of asteroid impacts using accessible simulation tools.</p>
         </div>
 
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">
           <Eye className="w-12 h-12 mb-4 text-yellow-400" />
           <h3 className="text-2xl font-semibold mb-2">Our Vision</h3>
-          <p className="text-white/70">Empower everyone to explore space science interactively.</p> 
+          <p className="text-white/70">A future where everyone understands asteroid risks and is prepared to respond effectively.</p> 
           {/* To empower both technical and non-technical people like  astrophysicist, students and hobbyists to explore space science and strategy in an interactive way. */}
         </div>
 
@@ -277,7 +277,7 @@ function App() {
       </div>
 
       {/* Video placeholder */}
-        <div className="w-full flex justify-center mt-8">
+        {/* <div className="w-full flex justify-center mt-8">
           <iframe
             className="w-full max-w-4xl aspect-video"
             src="https://www.youtube.com/embed/tgbNymZ7vqY"
@@ -286,7 +286,7 @@ function App() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
     </div>
 
     <Footer />

@@ -13,7 +13,7 @@ import Meteor from "/meteor.png"
 import Meteor2 from "/meteor2.png"
 
 // Icons
-import { Orbit, ShieldCheck, Globe2Icon, Rocket, Eye, Users, Menu, X, RocketIcon } from "lucide-react"
+import { Orbit, ShieldCheck, Globe2Icon, Rocket, Eye, Users, Menu, X, RocketIcon, Layers } from "lucide-react"
 
 const TypeAnimation = ({ sequence, wrapper, speed, className, repeat }) => {
   const [text, setText] = useState('');
@@ -265,7 +265,7 @@ function App() {
         </div>
         
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">
-          <ShieldCheck className="w-12 h-12 mb-4 text-green-400" />
+          <Layers className="w-12 h-12 mb-4 text-green-400" />
           <h3 className="text-2xl font-semibold mb-2">Composition insights</h3>
           <p className="text-white/70">Educational modules that provide in-depth analysis of asteroid composition and the science behind impact mitigation strategies.</p>
         </div>

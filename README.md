@@ -2,19 +2,19 @@
 
 ![Project Meteor Logo](/logo.png)
 
-> We developed an interactive asteroid simulator that utilizes NASA's Near-Earth Objects (NEO) dataset to calculate and visualize the effects and impact of asteroids that may have or might strike the Earth.
+> We developed an interactive meteor simulator that utilizes NASA's Near-Earth Objects (NEO) dataset to calculate and visualize the effects and impact of meteors that may have or might strike the Earth.
 
- _Project Meteor_ is an interactive asteroid simulator using NASA's NEO dataset to visualize potential asteroid impacts on Earth. Users can select an asteroid, modify impact parameters like the angle, and see the resulting crater, fireball, and blast radii on an interactive 3D model of the planet. The simulator serves as an educational tool for understanding asteroid threats and a practical application for planetary defense research.
+ _Project Meteor_ is an interactive meteor simulator using NASA's NEO dataset to visualize potential meteor impacts on Earth. Users can select an meteor, modify impact parameters like the angle, and see the resulting crater, fireball, and blast radii on an interactive 3D model of the planet. The simulator serves as an educational tool for understanding meteor threats and a practical application for planetary defense research.
 
 Visit [meteor.arjbuilds.dev](https://meteor.arjbuilds.dev) to see the website in action!
 
 ## ✨ Features
 
 - **Interactive 3D Earth Model:** Rotate and pan around a detailed 3D model of the Earth.
-- **NASA NEO Dataset:** Select real asteroids from NASA's database for simulation.
+- **NASA NEO Dataset:** Select real meteors from NASA's database for simulation.
 - **Customizable Simulations:** Modify values like impact angle to see different outcomes.
 - **Impact Visualization:** See the impact visualized in three radii: crater, fireball (thermal), and blast (shockwave).
-- **Educational Tool:** Understand the threat of asteroids and explore planetary defense scenarios.
+- **Educational Tool:** Understand the threat of meteors and explore planetary defense scenarios.
 
 
 [Watch Project Showcase](./showcase.mp4)

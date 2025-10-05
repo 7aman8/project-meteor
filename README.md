@@ -15,6 +15,12 @@ This project was developed by a passionate group of Seniors 2026 to inspire curi
 - **Impact Analysis:** Analyze the potential consequences of a meteor impact, from local to global effects.
 - **Modern UI:** A sleek, responsive, and intuitive interface built with the latest web technologies.
 
+### Demo
+<video width="100%" controls>
+  <source src="showcase.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## 🛠️ Tech Stack
 
 - **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.

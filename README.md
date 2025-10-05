@@ -4,7 +4,7 @@
 
 > We developed an interactive asteroid simulator that utilizes NASA's Near-Earth Objects (NEO) dataset to calculate and visualize the effects and impact of asteroids that may have or might strike the Earth.
 
-_Project Meteor_ is an interactive asteroid simulator that utilizes NASA's Near-Earth Objects (NEO) dataset to calculate and visualize the effects and impact of asteroids that may have or might strike the Earth. Users select an asteroid from NASA's database and simulate the strike of it on Earth, while modifying values like angle. An impact is visualized in three radii: the crater radius, the fireball radius (thermal radius), and the blast radius (shockwave radius). The simulator features a 3D model of Earth that can be panned and rotated around. The simulator uses mathematical and physical calculations to visualize the range of impact done by various asteroids. It serves both an educational purpose by helping people understand the threat of asteroids and practical applications for researchers and educators who are studying planetary defense scenarios.
+ _Project Meteor_ is an interactive asteroid simulator using NASA's NEO dataset to visualize potential asteroid impacts on Earth. Users can select an asteroid, modify impact parameters like the angle, and see the resulting crater, fireball, and blast radii on an interactive 3D model of the planet. The simulator serves as an educational tool for understanding asteroid threats and a practical application for planetary defense research.
 
 Visit [meteor.arjbuilds.dev](https://meteor.arjbuilds.dev) to see the website in action!
 

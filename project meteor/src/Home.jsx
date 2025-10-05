@@ -204,7 +204,7 @@ function App() {
         className='absolute rotate-10 w-30 right-70 top-110 '
       /> */}
     
-    <div className="">
+    {/* <div className="">
       <img src={Mars} alt="Mars image"
         className='absolute w-32 sm:w-40 md:w-48 lg:w-52 xl:w-40 2xl:w-60 -right-5 sm:-right-6 md:-right-7 lg:-right-8 xl:-right-9 2xl:-right-10 rotate-75 top-60 sm:top-64 md:top-72 lg:top-80 xl:top-96 2xl:top-112 opacity-80
         '
@@ -221,7 +221,7 @@ function App() {
       <div className="absolute z-100 
       xl:w-55 xl:h-55 xl:bottom-50 -right-20
       rounded-full bg-orange-300/30 blur-2xl"></div>
-    </div>
+    </div> */}
 
     </div>
 

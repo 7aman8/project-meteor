@@ -8,6 +8,12 @@
 
 Visit [meteor.arjbuilds.dev](https://meteor.arjbuilds.dev) to see the website in action!
 
+## Links
+[Watch Project Showcase](./showcase.mp4)
+
+
+[View Presentation (Canva)](https://www.canva.com/design/DAGzJPn9JI8/1tcjITd6v2ByNgX9Gjn7qA/edit?utm_content=DAGzJPn9JI8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 ## ✨ Features
 
 - **Interactive 3D Earth Model:** Rotate and pan around a detailed 3D model of the Earth.
@@ -17,7 +23,6 @@ Visit [meteor.arjbuilds.dev](https://meteor.arjbuilds.dev) to see the website in
 - **Educational Tool:** Understand the threat of asteroids and explore planetary defense scenarios.
 
 
-[Watch Project Showcase](./showcase.mp4)
 
 ## 🛠️ Tech Stack
 

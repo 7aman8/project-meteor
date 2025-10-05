@@ -12,6 +12,8 @@ import Venus from "/Venus.png"
 import Meteor from "/meteor.png"
 import Meteor2 from "/meteor2.png"
 
+import Vid from "../../showcase.mp4";
+
 // Icons
 import { Orbit, ShieldCheck, Globe2Icon, Rocket, Eye, Users, Menu, X, RocketIcon, Layers } from "lucide-react"
 
@@ -280,16 +282,16 @@ function App() {
       </div>
 
       {/* Video placeholder */}
-        {/* <div className="w-full flex justify-center mt-8">
+        <div className="w-full flex justify-center mt-8">
           <iframe
             className="w-full max-w-4xl aspect-video"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            src={Vid}
             title="YouTube video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div> */}
+        </div>
     </div>
 
     <Footer />

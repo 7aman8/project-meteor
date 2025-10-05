@@ -2,9 +2,10 @@
 
 ![Project Meteor Logo](/logo.png)
 
-> An interactive simulation where you can defend Earth from incoming threats using realistic physics and orbital mechanics.
+>An interactive simulation where you can defend Earth from incoming threats using realistic physics and orbital mechanics.
 
-_Project Meteor_ is a web-based educational tool designed to make space science and physics engaging and accessible. Users can launch simulations to understand the complexities of orbital mechanics and test various strategies to protect our planet from celestial impacts. 
+_Project Meteor_ is a web-based educational tool designed to make space science and physics engaging and accessible. Users can launch simulations to understand the complexities of orbital mechanics and test various strategies to protect our planet from celestial impacts.
+ 
 
 This project was developed by a passionate group of Seniors 2026 to inspire curiosity and teamwork.
 
@@ -14,6 +15,7 @@ This project was developed by a passionate group of Seniors 2026 to inspire curi
 - **Defensive Scenarios:** Test various strategies to deflect or destroy incoming threats to protect Earth.
 - **Impact Analysis:** Analyze the potential consequences of a meteor impact, from local to global effects.
 - **Modern UI:** A sleek, responsive, and intuitive interface built with the latest web technologies.
+
 
 [Watch Project Showcase](./showcase.mp4)
 

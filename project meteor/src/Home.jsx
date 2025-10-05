@@ -266,8 +266,8 @@ function App() {
         
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">
           <ShieldCheck className="w-12 h-12 mb-4 text-green-400" />
-          <h3 className="text-2xl font-semibold mb-2">Defensive Scenarios</h3>
-          <p className="text-white/70">Test various strategies to deflect or destroy incoming threats to protect the Earth.</p>
+          <h3 className="text-2xl font-semibold mb-2">Composition insights</h3>
+          <p className="text-white/70">Educational modules that provide in-depth analysis of asteroid composition and the science behind impact mitigation strategies.</p>
         </div>
         
         <div className="bg-[#1a2a38]/50 p-6 rounded-xl border border-white/10 flex flex-col items-center">

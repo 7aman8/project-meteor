@@ -1,3 +1,8 @@
+# DISCLAIMER:
+# The code was refined using AI. Not everything is AI-generated; however,
+# various code snippets were taken from AI during research on how to tackle
+# a specific task. AI was also used for help in mathematical calculations.
+
 extends Node3D
 class_name ImpactLocationPicker
 

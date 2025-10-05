@@ -16,7 +16,7 @@ extends Node3D
 
 const ASTEROID_BUTTON = preload("res://asteroid_button.tscn")
 
-var impact_location: Vector3
+var impact_location: Vector3 = Vector3.ZERO
 
 var live_asteroid_database: Array[Dictionary] = []
 var next_page_url: String = ""
@@ -33,6 +33,7 @@ var angle: float = 45
 
 
 func _ready():
+	launch_button.disabled = true
 	impact_details_container.hide()
 	location_picker.impact_location_selected.connect(_on_impact_location_selected)
 	location_picker.enable_picking_mode()
@@ -46,10 +47,16 @@ func fetch_asteroid_data():
 	print("Requesting data from: ", full_url)
 	neo_api_request.request(full_url)
 
+# This new function centralizes the logic for enabling/disabling the launch button.
+func _update_launch_button_state():
+	# The button is enabled only if an impact location is set AND an asteroid is selected.
+	var all_conditions_met = impact_location != Vector3.ZERO and not selected_asteroid_data.is_empty()
+	launch_button.disabled = not all_conditions_met
+
 func _on_impact_location_selected(world_pos: Vector3, _normal: Vector3):
 	print("Impact location selected: ", world_pos)
-	launch_button.disabled = false
 	impact_location = world_pos
+	_update_launch_button_state()
 
 func calculate_impact(diameter_m: float, density_kg_m3: float, velocity_ms: float, impact_angle_deg: float, _target_density_kg_m3: float) -> Dictionary:
 	var radius_m = diameter_m / 2.0
@@ -133,9 +140,10 @@ func _on_launch_button_pressed() -> void:
 	
 	# --- Reset for Next Shot ---
 	impact_location = Vector3.ZERO
-	launch_button.disabled = true
 	location_picker.delete_impact_markers()
 	location_picker.enable_picking_mode()
+	# The button must be disabled since the impact location is now reset.
+	_update_launch_button_state()
 
 func update_shader_data():
 	var earth_material = earth.get_surface_override_material(0)
@@ -193,10 +201,11 @@ func _on_neo_api_request_request_completed(result: int, response_code: int, _hea
 	else:
 		self.next_page_url = ""
 	
-	if not new_asteroids_list.is_empty() and selected_asteroid_data.is_empty():
-		selected_asteroid_data = new_asteroids_list[0]
-	
 	add_asteroid_buttons(new_asteroids_list)
+	
+	# We don't enable the button here directly anymore.
+	# The button will only be enabled once the user selects an asteroid AND a location.
+	_update_launch_button_state()
 
 func _on_load_more_button_pressed() -> void:
 	if not next_page_url.is_empty():
@@ -204,15 +213,12 @@ func _on_load_more_button_pressed() -> void:
 		neo_api_request.request(next_page_url)
 	else:
 		print("No more pages to load.")
-		# Consider getting a reference to the button in _ready to avoid using get_node here.
-		# For example: @onready var load_more_button = $Path/To/Button
-		# Then you can just do: load_more_button.disabled = true
 		$HUD/Control/HBoxContainer/MarginContainer/VBoxContainer/LoadMoreButton.disabled = true
 
 func _on_asteroid_button_selected(asteroid_info: Dictionary):
-	launch_button.disabled = false
 	selected_asteroid_data = asteroid_info
 	print("Selected Asteroid: ", selected_asteroid_data["name"])
+	_update_launch_button_state()
 
 func _on_angle_slider_value_changed(value: float) -> void:
 	var angle_label = $HUD/Control/HBoxContainer/VBoxContainer/HBoxContainer/AngleLabel

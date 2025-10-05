@@ -281,17 +281,17 @@ function App() {
 
       </div>
 
-      {/* Video placeholder */}
-        <div className="w-full flex justify-center mt-8">
-          <iframe
-            className="w-full max-w-4xl aspect-video"
-            src={Vid}
-            title="YouTube video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
+{/* Video placeholder */}
+<div className="w-full flex justify-center mt-8">
+  <video
+    className="w-full max-w-4xl aspect-video rounded-lg"
+    controls
+    preload="metadata"
+  >
+    <source src={Vid} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
     </div>
 
     <Footer />

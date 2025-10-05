@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-route
 
 
 import Logo from "/logo.png"
+import LogoH from "/LogoH.png"
 
 import Earth from "/earthm.png"
 import Mars from "/Mars.png"
@@ -86,14 +87,26 @@ function App() {
     
     {/* main landing page */}
     <div className="bg-transparent h-[97vh] w-[97vw] mx-auto mt-auto mb-2 rounded-3xl translate-y-3 overflow-hidden border-2 border-white/30 shadow-lg relative">
-      <nav className="relative flex items-center justify-between p-4 ml-5 text-white font-[Poppins]">
+      <nav className="relative flex items-center justify-between p-4 ml-5 text-white font-[Poppins] mt-5 transition-all ">
+
         {/* Logo on the left */}
-          <a href="/">
-            <div className="flex items-center space-x-4">
-              <img src={Logo} alt="Logo" className="w-20 h-20" />
-              <span className="text-lg font-bold font-mono ">_Project Meteor </span>
-            </div>
-          </a>
+        <a href="/">
+        <div className="relative flex items-center space-x-4 w-80 h-20">
+            {/* Default logo */}
+            <img
+            src={Logo}
+            alt="Logo"
+            className="absolute inset-0 w-20 h-20 object-cover transition-opacity duration-500 opacity-100 hover:opacity-0"
+            />
+            {/* Hover logo */}
+            <img
+            src={LogoH}
+            alt="Logo Hover"
+            className="absolute inset-0 w-20 h-20 object-cover transition-opacity duration-500 opacity-0 hover:opacity-100"
+            />
+            <span className="text-lg font-bold font-mono ml-25">_Project Meteor</span>
+        </div>
+        </a>
 
         {/* Nav links centered */}
         <div className="absolute hidden md:flex text-md font-[550] left-1/2 transform -translate-x-1/2 gap-8 xl:gap-12 2xl:gap-16 2xl:text-lg">
@@ -132,9 +145,9 @@ function App() {
       <div>
         <TypeAnimation
           sequence={[
-            "EARTH'S SHIELD",
-            "EARTH'S DEFENSE",
-            "EARTH'S GUARDIAN",
+            "EARTH'S AWARENESS",
+            "EARTH'S IMPACT",
+            "PROJECT METEOR",
           ]}
           // sequence={[
           //   "PROJECT METEOR: EARTH'S SHIELD",
